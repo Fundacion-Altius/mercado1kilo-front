@@ -1,5 +1,5 @@
 # Use an official Node runtime as the base image
-FROM node:18
+FROM node:20
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # The project code will be mounted as a volume, so we don't need to copy it here
 
